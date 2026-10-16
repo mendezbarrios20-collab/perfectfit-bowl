@@ -1,4 +1,187 @@
-h1{
-    font-family: "Playfair Display", serif;
-    font-weight: 100;
+/* ==========================================================================
+   1. IDENTIDAD DE MARCA (Tus Tipografías y Colores Originales)
+   ========================================================================== */
+h1 {
+    color: #823b3b;
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    text-align: center;
+}
+
+h2 {
+    color: #823b3b;
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+h3 {
+    color: #823b3b;
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+h4 {
+    color: #823b3b;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+a {
+    color: #7b3a3a;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+
+.enlaces-del-header {
+    color: #823b3b;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+.testimonio {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    text-align: center;
+}
+
+/* ==========================================================================
+   2. RESETEO UNIVERSAL Y TAMAÑO DE CAJA (Tema 8: box-sizing)
+   ========================================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* Evita que padding y borders deformen las cajas */
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Desplazamiento interactivo suave por el menú */
+}
+
+body {
+    background-color: #fcfbfa; /* Fondo crema muy sutil que combina con tu vino */
+    line-height: 1.6; /* Mejora la legibilidad de los párrafos extensos */
+}
+
+/* Removiendo estilos de listas para el menú */
+ul {
+    list-style: none;
+}
+
+/* Corrección para enlaces generales e interactividad */
+a {
+    text-decoration: none; /* Quita la línea de subrayado azul por defecto */
+    transition: all 0.3s ease; /* Microinteracción suave para los hovers */
+}
+
+/* ==========================================================================
+   3. MODELO DE CAJA GENERAL (Tema 5, 6 y 10: Padding, Margin y Unidades)
+   ========================================================================== */
+.header-container,
+.hero-container,
+.about-container,
+.catalog-container,
+.ai-container,
+.contact-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto; /* Centrado horizontal automático de todas las secciones */
+    padding: 2rem 0; /* Relleno arriba y abajo con unidades relativas rem */
+}
+
+/* Ajuste profesional de imágenes (Tema 6: Rutas y tamaños) */
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+    object-fit: cover; /* Evita que las fotos de los bowls se estiren o pincelen */
+}
+
+/* ==========================================================================
+   4. MAQUETACIÓN E INTERACTIVIDAD DE TARJETAS (Tema 7 y 11: Borders y Sombras)
+   ========================================================================== */
+.product-card, .ai-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px; /* Esquinas redondeadas estilo aplicación moderna */
+    border: 1px solid rgba(130, 59, 59, 0.1); /* Borde sutil usando tu color en RGBA */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05); /* Sombra difusa y elegante */
+    margin-bottom: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Microinteracción: la tarjeta reacciona cuando el usuario pasa el mouse */
+.product-card:hover, .ai-card:hover {
+    transform: translateY(-5px); /* Eleva la tarjeta suavemente */
+    box-shadow: 0px 10px 25px rgba(130, 59, 59, 0.15); /* Intensifica la sombra */
+}
+
+.product-img-container {
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden; /* Mantiene la imagen dentro del límite redondeado */
+}
+
+/* Estilizado de precios (Tema 9: Colores) */
+.product-price {
+    display: block;
+    color: #7b3a3a; /* Tu color de enlaces */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+/* ==========================================================================
+   5. BOTONES E INTERFACES DEL FORMULARIO (Tema 7 y 11: Textarea y Botones)
+   ========================================================================== */
+.btn-primary, .btn-secondary, .btn-ai-action, .btn-submit {
+    display: inline-block;
+    background-color: #823b3b; /* Tu color h1 como fondo principal */
+    color: #ffffff;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Efecto Hover para los botones */
+.btn-primary:hover, .btn-secondary:hover, .btn-ai-action:hover, .btn-submit:hover {
+    background-color: #5c2828; /* Oscurece el botón interactivamente al pasar el mouse */
+}
+
+/* Control del cuadro de texto del formulario */
+.form-textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid rgba(130, 59, 59, 0.2);
+    border-radius: 6px;
+    resize: vertical; /* Evita que rompa el diseño estirándose hacia los lados */
+    min-height: 100px;
+    max-height: 250px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(130, 59, 59, 0.2);
+    border-radius: 6px;
+    font-family: 'Montserrat', sans-serif;
 }
